@@ -31,7 +31,6 @@ const { buildSystemPrompt, callGemini } = require('./generate-post');
 const { validatePost } = require('./validate-post');
 const { publishToLinkedIn } = require('./linkedin');
 
-const TIMEZONE = () => loadSettings().timezone;
 const settings = loadSettings();
 
 /** A known, user-actionable configuration problem (shown without a stack trace). */

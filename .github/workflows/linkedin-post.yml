@@ -3,9 +3,7 @@ name: LinkedIn AI Post
 on:
   schedule:
     # GitHub Actions cron is in UTC. Adjust for your timezone.
-    # Monday 13:00 UTC (= 18:00 Pakistan Standard Time)
     - cron: '0 13 * * 1'
-    # Wednesday 13:00 UTC (= 18:00 Pakistan Standard Time)
     - cron: '0 13 * * 3'
   workflow_dispatch: # manual trigger
 

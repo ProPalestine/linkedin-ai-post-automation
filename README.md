@@ -233,7 +233,7 @@ To convert your local time to UTC, use any timezone converter. Examples:
 
 | Local time | Timezone | UTC cron |
 |------------|----------|----------|
-| 18:00 Monday & Wednesday | Pakistan (PKT, UTC+5) | `0 13 * * 1` / `0 13 * * 3` |
+| 17:00 Monday & Wednesday | London (BST, UTC+1) | `0 16 * * 1` / `0 16 * * 3` |
 | 09:00 Monday & Wednesday | New York (EDT, UTC-4) | `0 13 * * 1` / `0 13 * * 3` |
 | 14:00 Tuesday only | Berlin (CEST, UTC+2) | `0 12 * * 2` |
 

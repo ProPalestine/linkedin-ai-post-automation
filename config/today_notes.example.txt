@@ -1,0 +1,15 @@
+# config/today_notes.txt — TODAY'S SPECIFIC KNOWLEDGE
+# Copy this file to today_notes.txt and replace with YOUR notes.
+# This is the highest-priority knowledge source for the next scheduled post.
+# It is read once, used to generate the post, then cleared after a successful publish.
+
+Today's topic:
+Example topic goes here.
+
+Key points:
+- Point one
+- Point two
+- Point three
+
+Something concrete I actually learned today:
+- A specific fact, a code snippet, or an "aha" moment worth sharing.

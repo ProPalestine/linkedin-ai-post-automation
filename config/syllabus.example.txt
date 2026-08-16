@@ -1,0 +1,19 @@
+# config/syllabus.txt — BROADER SUBJECT CONTEXT
+# Copy this file to syllabus.txt and replace with the overall course,
+# curriculum, or roadmap you are working through. Used when today_notes.txt
+# is empty, to pick the next sensible topic.
+
+Week 1 — Foundations
+- Core concepts
+- Key terminology
+- First mini-project
+
+Week 2 — Intermediate
+- Main topic A
+- Main topic B
+- Practice exercise
+
+Week 3 — Advanced
+- Deep topic 1
+- Deep topic 2
+- Capstone-style exercise

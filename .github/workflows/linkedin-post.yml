@@ -1,0 +1,59 @@
+name: LinkedIn AI Post
+
+on:
+  schedule:
+    # GitHub Actions cron is in UTC. Adjust for your timezone.
+    # Monday 13:00 UTC (= 18:00 Pakistan Standard Time)
+    - cron: '0 13 * * 1'
+    # Wednesday 13:00 UTC (= 18:00 Pakistan Standard Time)
+    - cron: '0 13 * * 3'
+  workflow_dispatch: # manual trigger
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    env:
+      CI: true
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Restore private config from secrets (optional)
+        # The real config files (today_notes.txt, syllabus.txt, rules.txt,
+        # identity.txt, settings.json) are gitignored. If your repo is
+        # public, provide them as base64 GitHub Secrets instead of committing
+        # them. Skip this step entirely if your fork is private and you
+        # committed the files directly.
+        env:
+          SETTINGS_B64: ${{ secrets.SETTINGS_B64 }}
+          IDENTITY_B64: ${{ secrets.IDENTITY_B64 }}
+          RULES_B64: ${{ secrets.RULES_B64 }}
+          SYLLABUS_B64: ${{ secrets.SYLLABUS_B64 }}
+          TODAY_NOTES_B64: ${{ secrets.TODAY_NOTES_B64 }}
+        run: |
+          if [ -n "$SETTINGS_B64" ]; then echo "$SETTINGS_B64" | base64 -d > config/settings.json; fi
+          if [ -n "$IDENTITY_B64" ]; then echo "$IDENTITY_B64" | base64 -d > config/identity.txt; fi
+          if [ -n "$RULES_B64" ]; then echo "$RULES_B64" | base64 -d > config/rules.txt; fi
+          if [ -n "$SYLLABUS_B64" ]; then echo "$SYLLABUS_B64" | base64 -d > config/syllabus.txt; fi
+          if [ -n "$TODAY_NOTES_B64" ]; then echo "$TODAY_NOTES_B64" | base64 -d > config/today_notes.txt; fi
+          ls -la config/
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run LinkedIn Post Automation
+        run: node scripts/post-automation.js scheduled

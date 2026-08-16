@@ -1,0 +1,15 @@
+{
+  "timezone": "UTC",
+  "scheduleDays": ["monday", "wednesday"],
+  "topics": {
+    "monday": "Your Monday Topic",
+    "wednesday": "Your Wednesday Topic"
+  },
+  "requiredHashtags": ["#LearningInPublic"],
+  "postMinWords": 50,
+  "postMaxWords": 250,
+  "maxEmojis": 5,
+  "maxHashtags": 10,
+  "maxRewriteAttempts": 3,
+  "similarityThreshold": 0.7
+}

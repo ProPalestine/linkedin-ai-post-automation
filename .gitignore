@@ -1,0 +1,36 @@
+# ── Node ──────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# ── Environment / secrets ────────────────────────────
+.env
+.env.*
+!.env.example
+*.token
+tokens/
+**/credentials*
+
+# ── Private config (copy from config/*.example.*) ─────
+config/settings.json
+config/identity.txt
+config/today_notes.txt
+config/syllabus.txt
+config/rules.txt
+
+# ── Private archive & drafts ─────────────────────────
+# Published posts and rejected drafts are personal.
+# Keep them local or in a private repo.
+archive/*.md
+archive/*.txt
+archive/drafts/
+!archive/.gitkeep
+
+# ── Logs ─────────────────────────────────────────────
+*.log
+
+# ── OS / IDE ─────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

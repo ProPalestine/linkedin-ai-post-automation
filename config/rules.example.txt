@@ -1,0 +1,21 @@
+# config/rules.txt — WRITING STYLE & QUALITY RULES
+# Copy this file to rules.txt and adapt to YOUR voice.
+# These rules are injected into the Gemini prompt for every generated post.
+
+## Writing style
+- Write like a real person sharing what they learned today — not a blog post, not marketing.
+- Natural, friendly, professional, educational. First person.
+- Vary sentence and paragraph length. Don't use the same structure every post.
+- Use specific, concrete details. No vague statements.
+- No hype words ("game-changing", "revolutionary", "cutting-edge", "let's dive into").
+- No generic inspirational quotes.
+
+## Truthfulness
+- Never lie, exaggerate, or invent projects or experiences.
+- Write "I built..." only when it is genuinely true.
+- When unsure about a fact, leave it out.
+
+## Format
+- Plain text only: no markdown, no bold, no code blocks, no bullet symbols.
+- At most 5 emojis, placed naturally. Not one on every line.
+- Hashtags at the very end of the post.
